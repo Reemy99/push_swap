@@ -6,30 +6,16 @@
 /*   By: realdahh <realdahh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/26 20:17:31 by realdahh          #+#    #+#             */
-/*   Updated: 2023/01/07 13:57:59 by realdahh         ###   ########.fr       */
+/*   Updated: 2023/01/07 15:44:54 by realdahh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-//  int	duplicate(int nb, char **new, int i)
-// {
-// 	i++;
-// 	while (new[i])
-// 	{
-// 		if (ft_atoi(new[i]) == nb)
-// 			return (1);
-// 		i++;
-// 	}
-// 	return (0);
-// }
-
 static int	is_num(char *nb)
 {
-	int	i;
 	int	x;
 
-	i = 0;
 	x = 0;
 	if (!nb)
 		return (0);
