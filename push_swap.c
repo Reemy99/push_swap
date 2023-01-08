@@ -6,7 +6,7 @@
 /*   By: realdahh <realdahh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/26 15:58:17 by realdahh          #+#    #+#             */
-/*   Updated: 2023/01/07 13:03:41 by realdahh         ###   ########.fr       */
+/*   Updated: 2023/01/08 15:59:46 by realdahh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,11 +74,12 @@ int	dup_check(t_node **a_stack)
 	return (0);
 }
 
-static void	err_check(t_node **a_stack)
+static void	err_check(t_node **a_stack, t_node **b_stack)
 {
 	if (dup_check(a_stack) == 1)
 	{
 		free_stack(a_stack);
+		free_stack(b_stack);
 		write(1, "Error\n", 6);
 		exit(1);
 	}
@@ -97,7 +98,7 @@ int	main(int ac, char **av)
 	*a_stack = NULL;
 	*b_stack = NULL;
 	init_sort(a_stack, av);
-	err_check(a_stack);
+	err_check(a_stack, b_stack);
 	if (ft_sorted(a_stack))
 	{
 		free_stack(a_stack);
