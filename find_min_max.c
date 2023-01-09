@@ -28,6 +28,8 @@ int	find_minimum(t_node **stack, int value)
 	return (min_nb);
 }
 
+// why here the fun is static 
+// Returns the next minimum stack value
 t_node	*find_next_min(t_node **stack)
 {
 	int		m;
@@ -52,6 +54,8 @@ t_node	*find_next_min(t_node **stack)
 	return (min_nb);
 }
 
+/ Return the distance between the initial node and the one
+//having the sought index
 int	find_max_bits(t_node **stack)
 {
 	t_node	*top_a;
