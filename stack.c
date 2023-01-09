@@ -12,6 +12,7 @@
 
 #include "push_swap.h"
 
+// Choose the algo according to the size to sort
 void	ft_sorting(t_node **a_stack, t_node **b_stack)
 {
 	if (list_size(*a_stack) <= 5)
@@ -20,6 +21,7 @@ void	ft_sorting(t_node **a_stack, t_node **b_stack)
 		radix_sort(a_stack, b_stack);
 }
 
+// Assign their index to the nodes of the stack during initialization
 void	ft_index(t_node **stack)
 {
 	t_node	*top;
