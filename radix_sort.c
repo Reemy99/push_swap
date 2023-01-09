@@ -12,6 +12,7 @@
 
 #include "push_swap.h"
 
+// Radix sort of values by binary indexing
 void	radix_sort(t_node **a_stack, t_node **b_stack)
 {
 	int		nb;
@@ -30,11 +31,17 @@ void	radix_sort(t_node **a_stack, t_node **b_stack)
 		while (nb++ < size_lst)
 		{
 			top = *a_stack;
+			// if top->index pos[i] & 1 was == 1, then make revers A
+			//if the bits was 1 so it will be equal
 			if (((top->index >> bits) & 1) == 1)
+				//rotate a
 				ra(a_stack);
 			else
+				// else push it to b
+
 				pb (a_stack, b_stack);
 		}
+		//while it's not empty push to a, thats mean if nums in bits 0
 		while (list_size (*b_stack) != 0)
 			pa (a_stack, b_stack);
 		bits++;
