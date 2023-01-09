@@ -12,6 +12,7 @@
 
 #include "push_swap.h"
 
+// Swap the first 2 elements at the top of stack
 int	swap(t_node **stack)
 {
 	t_node	*top;
@@ -26,6 +27,7 @@ int	swap(t_node **stack)
 	return (0);
 }
 
+//Take the first element at the top of s1 and put it at the top of s2
 int	push(t_node **stack_dst, t_node **stack_src)
 {
 	t_node	*tmp;
@@ -53,6 +55,7 @@ int	push(t_node **stack_dst, t_node **stack_src)
 	return (0);
 }
 
+//Shift up all elements of (s) by 1,The first element becomes the last one
 int	rotate(t_node **stack)
 {
 	t_node	*top;
@@ -68,6 +71,7 @@ int	rotate(t_node **stack)
 	return (0);
 }
 
+//Shift down all elements of (s) by 1.The last element becomes the first one
 int	reverse_rotate(t_node **stack)
 {
 	t_node	*top;
