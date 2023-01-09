@@ -12,6 +12,7 @@
 
 #include "push_swap.h"
 
+//handle all the error cases gor the '-' a '+'
 static int	is_num(char *nb)
 {
 	int	x;
