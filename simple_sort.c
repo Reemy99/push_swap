@@ -37,9 +37,11 @@ void	sort_3nums(t_node **a_stack)
 	top = *a_stack;
 	min_nb = find_minimum(a_stack, -1);
 	if (top->next->index == min_nb)
+		//if 3 1 2
 		ra(a_stack);
 	else
 	{
+		//if 3 2 1
 		sa(a_stack);
 		rra(a_stack);
 	}
@@ -58,6 +60,7 @@ void	sort_3numbers(t_node **a_stack)
 		return ;
 	if (top->index == min_nb && top->next->index != next_min)
 	{
+		//if 1 3 2
 		ra(a_stack);
 		sa(a_stack);
 		rra(a_stack);
@@ -65,8 +68,10 @@ void	sort_3numbers(t_node **a_stack)
 	else if (top->index == next_min)
 	{
 		if (top->next->index == min_nb)
+			//if 2 1 3
 			sa(a_stack);
 		else
+			//if 2 3 1 
 			rra(a_stack);
 	}
 	else
