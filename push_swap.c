@@ -19,6 +19,7 @@ int	ft_sorted(t_node **stack)
 	top = *stack;
 	while (top && top-> next)
 	{
+		//if the top was greater that's mean it is not sorted
 		if (top->data > top->next->data)
 			return (0);
 		top = top->next;
@@ -26,6 +27,7 @@ int	ft_sorted(t_node **stack)
 	return (1);
 }
 
+// Initialize the stack and fill it with nodes from argv
 void	init_sort(t_node **stack, char **av)
 {
 	t_vars	vars;
@@ -34,7 +36,7 @@ void	init_sort(t_node **stack, char **av)
 	vars.x = 0;
 	while (av[++vars.x])
 	{
-		vars.arg = ft_split(av[vars.x], ' ');
+		vars.arg = ft_split(av[vars.x], ' ');// cuz we didnt split this case in arg_check
 		if (vars.arg[1] == NULL)
 		{
 			vars.new = new_list(ft_atoi(av[vars.x]));
@@ -44,7 +46,10 @@ void	init_sort(t_node **stack, char **av)
 		{
 			while (vars.arg[vars.i])
 			{
+				//put all mr argument in new_list
 				vars.new = new_list(ft_atoi(vars.arg[vars.i]));
+				//we used add_back cus each argumen will be in sigle list
+				//and we want the first argument be in the head and all other argument comes after
 				add_back_list(stack, vars.new);
 				vars.i++;
 			}
